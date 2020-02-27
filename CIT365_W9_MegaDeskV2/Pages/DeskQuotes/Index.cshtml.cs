@@ -23,7 +23,12 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
 
         public async Task OnGetAsync()
         {
-            DeskQuote = await _context.DeskQuote.ToListAsync();
+            //DeskQuote = await _context.DeskQuote.ToListAsync();
+            DeskQuote = await _context.DeskQuote
+                .Include(s => s.desk)
+                .Include(t => t.desk.surfaceMaterial)
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }

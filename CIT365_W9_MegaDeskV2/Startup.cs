@@ -29,6 +29,9 @@ namespace CIT365_W9_MegaDeskV2
 
             services.AddDbContext<CIT365_W9_MegaDeskV2Context>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("CIT365_W9_MegaDeskV2Context")));
+
+            System.Diagnostics.Debug.WriteLine("Configuration Finished.");
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

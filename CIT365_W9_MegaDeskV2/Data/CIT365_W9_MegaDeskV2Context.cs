@@ -14,21 +14,18 @@ namespace CIT365_W9_MegaDeskV2.Data
         {
         }
 
-        public DbSet<CIT365_W9_MegaDeskV2.Models.SurfaceMaterial> SurfaceMaterial { get; set; }
-
-        public DbSet<CIT365_W9_MegaDeskV2.Models.RushType> RushType { get; set; }
-        public DbSet<RushType> RushTypeList { get; set; }
-
-        public DbSet<CIT365_W9_MegaDeskV2.Models.Desk> Desk { get; set; }
-
         public DbSet<CIT365_W9_MegaDeskV2.Models.DeskQuote> DeskQuote { get; set; }
-
+        public DbSet<CIT365_W9_MegaDeskV2.Models.Desk> Desk { get; set; }
+        public DbSet<CIT365_W9_MegaDeskV2.Models.RushType> RushType { get; set; }
+        public DbSet<CIT365_W9_MegaDeskV2.Models.SurfaceMaterial> SurfaceMaterial { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<DeskQuote>().ToTable("DeskQuote");
+            modelBuilder.Entity<Desk>().ToTable("Desk");
             modelBuilder.Entity<RushType>().ToTable("RushType");
+            modelBuilder.Entity<SurfaceMaterial>().ToTable("SurfaceMaterial");
+            System.Diagnostics.Debug.WriteLine("Initialized Models");
         }
-
     }
-
 }

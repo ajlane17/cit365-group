@@ -17,18 +17,17 @@ namespace CIT365_W9_MegaDeskV2.Models
         [StringLength(50, MinimumLength = 3, ErrorMessage = "The customer name length must be between 3 and 50 characters")]
         public String customerName { get; set; }
         [Required(ErrorMessage = "A desk must be configured")]
-        public virtual Desk desk { get; set; }
+        public Desk desk { get; set; }
         //public int deskID { get; set; }
         [Required(ErrorMessage = "A shipping method must be selected.")]
         public int rushID { get; set; }
+
+        //Adding this for the lookup value causes an error when accessing the data.
+        //public IEnumerable<SelectListItem> RushTypeList { get; set; }
 
         [Display(Name = "Quote Amount")]
         [DataType(DataType.Currency)]
         [Editable(false)]
         public double totalQuote { get; set; }
-
-        public List<RushType> RushTypeList { get; set; }
-        public List<SurfaceMaterial> SurfaceMaterialList { get; set; }
-
     }
 }

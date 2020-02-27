@@ -3,14 +3,16 @@ using CIT365_W9_MegaDeskV2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CIT365_W9_MegaDeskV2.Migrations
 {
     [DbContext(typeof(CIT365_W9_MegaDeskV2Context))]
-    partial class CIT365_W9_MegaDeskV2ContextModelSnapshot : ModelSnapshot
+    [Migration("20200227151548_exclude rushtypelist and surfacemateriallist from DB")]
+    partial class excluderushtypelistandsurfacemateriallistfromDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
