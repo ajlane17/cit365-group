@@ -1,0 +1,66 @@
+﻿@page
+@model CIT365_W9_MegaDeskV2.Pages.DeskQuotes.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DeskQuote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.customerName" class="control-label"></label>
+                <input asp-for="DeskQuote.customerName" class="form-control" />
+                <span asp-validation-for="DeskQuote.customerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.desk.depth" class="control-label"></label>
+                <input asp-for="DeskQuote.desk.depth" class="form-control" />
+                <span asp-validation-for="DeskQuote.desk.depth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.desk.width" class="control-label"></label>
+                <input asp-for="DeskQuote.desk.width" class="form-control" />
+                <span asp-validation-for="DeskQuote.desk.width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.desk.drawers" class="control-label"></label>
+                <input asp-for="DeskQuote.desk.drawers" class="form-control" />
+                <span asp-validation-for="DeskQuote.desk.drawers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.desk.surfaceMaterial.description" class="control-label"></label>
+                <input asp-for="DeskQuote.desk.surfaceMaterial.description" class="form-control" />
+                <span asp-validation-for="DeskQuote.desk.surfaceMaterial.description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeskQuote.rushID" class="control-label"></label>
+                <input asp-for="DeskQuote.rushID" class="form-control" />
+                <span asp-validation-for="DeskQuote.rushID" class="text-danger"></span>
+            </div>
+      
+
+            <div class="form-group">
+                <label asp-for="DeskQuote.totalQuote" class="control-label"></label>
+                <input asp-for="DeskQuote.totalQuote" class="form-control" />
+                <span asp-validation-for="DeskQuote.totalQuote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

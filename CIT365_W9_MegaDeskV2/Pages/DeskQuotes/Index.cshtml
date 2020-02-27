@@ -1,0 +1,72 @@
+﻿@page
+@model CIT365_W9_MegaDeskV2.Pages.DeskQuotes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].customerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].desk.width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].desk.depth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].desk.drawers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].desk.surfaceMaterial.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].rushID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeskQuote[0].totalQuote)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.DeskQuote) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.customerName)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.desk.width)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.desk.depth)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.desk.drawers)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.desk.surfaceMaterial.description)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.rushID)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalQuote)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
