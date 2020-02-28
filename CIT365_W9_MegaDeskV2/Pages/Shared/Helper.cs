@@ -29,7 +29,7 @@ namespace CIT365_W9_MegaDeskV2
                 //Add drawer cost
                 tempCost += dq.desk.drawers * drawerCost;
                 //Add surface material cost
-                tempCost += dq.desk.surfaceMaterial.cost;
+                //tempCost += dq.desk.surfaceMaterial.cost;
                 //Add rush shipping costs based on tier and values in RushType dataset
                 //TODO: Fix rush type addition
                 //if (surfaceArea < tier1Max)

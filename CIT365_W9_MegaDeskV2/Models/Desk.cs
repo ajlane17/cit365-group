@@ -27,6 +27,7 @@ namespace CIT365_W9_MegaDeskV2.Models
 
         [Display(Name = "Select Surface Material")]
         [Required(ErrorMessage ="A surface material must be selected.")]
-        public SurfaceMaterial surfaceMaterial { get; set; }
+        public int surfaceMaterialID { get; set; }
+        //public SurfaceMaterial surfaceMaterial { get; set; }
     }
 }

@@ -18,7 +18,26 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
         public EditModel(CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context context)
         {
             _context = context;
+
+            RushTypeList = context.RushType.Select(a =>
+                                            new SelectListItem
+                                            {
+                                                Value = a.id.ToString(),
+                                                Text = a.description
+                                            }).ToList();
+
+            SurfaceMaterialList = context.SurfaceMaterial.Select(a =>
+                                            new SelectListItem
+                                            {
+                                                Value = a.id.ToString(),
+                                                Text = a.description
+                                            }).ToList();
+
+
         }
+
+        public List<SelectListItem> RushTypeList { get; set; }
+        public List<SelectListItem> SurfaceMaterialList { get; set; }
 
         [BindProperty]
         public DeskQuote DeskQuote { get; set; }
@@ -35,7 +54,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
             //Pull in related tables
             DeskQuote = await _context.DeskQuote
                 .Include(s => s.desk)
-                .Include(t => t.desk.surfaceMaterial)
+                //.Include(t => t.desk.surfaceMaterial)
                 .AsNoTracking()
                 .FirstOrDefaultAsync();
 

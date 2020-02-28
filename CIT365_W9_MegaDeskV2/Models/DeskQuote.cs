@@ -19,11 +19,10 @@ namespace CIT365_W9_MegaDeskV2.Models
         [Required(ErrorMessage = "A desk must be configured")]
         public Desk desk { get; set; }
         //public int deskID { get; set; }
-        [Required(ErrorMessage = "A shipping method must be selected.")]
+        //[Required(ErrorMessage = "A shipping method must be selected.")]
         public int rushID { get; set; }
 
         //Adding this for the lookup value causes an error when accessing the data.
-        //public IEnumerable<SelectListItem> RushTypeList { get; set; }
 
         [Display(Name = "Quote Amount")]
         [DataType(DataType.Currency)]

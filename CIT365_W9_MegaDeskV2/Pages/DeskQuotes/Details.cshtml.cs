@@ -31,7 +31,6 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
             //DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.id == id);
             DeskQuote = await _context.DeskQuote
                 .Include(s => s.desk)
-                .Include(t => t.desk.surfaceMaterial)
                 .AsNoTracking()
                 .FirstOrDefaultAsync();
 
