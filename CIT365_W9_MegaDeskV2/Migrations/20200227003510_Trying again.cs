@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CIT365_W9_MegaDeskV2.Migrations
+namespace MegaDesk.Migrations
 {
     public partial class Tryingagain : Migration
     {
@@ -31,7 +31,7 @@ namespace CIT365_W9_MegaDeskV2.Migrations
                 table: "RushType",
                 column: "DeskQuoteid",
                 principalTable: "DeskQuote",
-                principalColumn: "id",
+                principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
 
             migrationBuilder.AddForeignKey(
@@ -39,7 +39,7 @@ namespace CIT365_W9_MegaDeskV2.Migrations
                 table: "SurfaceMaterial",
                 column: "DeskQuoteid",
                 principalTable: "DeskQuote",
-                principalColumn: "id",
+                principalColumn: "Id",
                 onDelete: ReferentialAction.Restrict);
         }
 

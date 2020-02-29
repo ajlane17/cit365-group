@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CIT365_W9_MegaDeskV2.Migrations
+namespace MegaDesk.Migrations
 {
     public partial class workingonselectlists : Migration
     {
@@ -48,7 +48,7 @@ namespace CIT365_W9_MegaDeskV2.Migrations
                 table: "DeskQuote",
                 column: "rushTypeid",
                 principalTable: "RushType",
-                principalColumn: "id",
+                principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }
     }

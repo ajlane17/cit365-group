@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CIT365_W9_MegaDeskV2.Migrations
+namespace MegaDesk.Migrations
 {
     public partial class InitialVersion : Migration
     {
@@ -55,7 +55,7 @@ namespace CIT365_W9_MegaDeskV2.Migrations
                         name: "FK_Desk_SurfaceMaterial_surfaceMaterialid",
                         column: x => x.surfaceMaterialid,
                         principalTable: "SurfaceMaterial",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -75,7 +75,7 @@ namespace CIT365_W9_MegaDeskV2.Migrations
                         name: "FK_DeskQuote_Desk_deskid",
                         column: x => x.deskid,
                         principalTable: "Desk",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 

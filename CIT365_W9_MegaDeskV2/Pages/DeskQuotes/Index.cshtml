@@ -1,5 +1,5 @@
 ﻿@page
-@model CIT365_W9_MegaDeskV2.Pages.DeskQuotes.IndexModel
+@model MegaDesk.Pages.DeskQuotes.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,25 +14,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].customerName)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].desk.width)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Width)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].desk.depth)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Depth)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].desk.drawers)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Drawers)
             </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].desk.surfaceMaterialID)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.SurfaceMaterialId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].rushID)
+                @Html.DisplayNameFor(model => model.DeskQuote[0].RushId)
             </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].totalQuote)
+                Total Price
             </th>
             <th></th>
         </tr>
@@ -41,30 +41,30 @@
 @foreach (var item in Model.DeskQuote) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.customerName)
+                @Html.DisplayFor(modelItem => item.CustomerName)
             </td>
             <th>
-                @Html.DisplayFor(modelItem => item.desk.width)
+                @Html.DisplayFor(modelItem => item.Desk.Width)
             </th>
             <th>
-                @Html.DisplayFor(modelItem => item.desk.depth)
+                @Html.DisplayFor(modelItem => item.Desk.Depth)
             </th>
             <th>
-                @Html.DisplayFor(modelItem => item.desk.drawers)
+                @Html.DisplayFor(modelItem => item.Desk.Drawers)
             </th>
             @*<th>
-                @Html.DisplayFor(modelItem => item.desk.surfaceMaterialID)
+                @Html.DisplayFor(modelItem => item.Desk.SurfaceMaterialId)
             </th>
             <th>
-                @Html.DisplayFor(modelItem => item.rushID)
+                @Html.DisplayFor(modelItem => item.RushId)
             </th>*@
             <td>
-                @Html.DisplayFor(modelItem => item.totalQuote)
+                @item.QuotePrice
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+                <a asp-page="./Edit" asp-route-Id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-Id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-Id="@item.Id">Delete</a>
             </td>
         </tr>
 }

@@ -6,16 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using CIT365_W9_MegaDeskV2.Models;
-using CIT365_W9_MegaDeskV2.Data;
+using MegaDesk.Data;
+using MegaDesk.Models;
 
-namespace CIT365_W9_MegaDeskV2.Pages.RushTypes
+namespace MegaDesk.Pages.RushTypes
 {
     public class EditModel : PageModel
     {
-        private readonly CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context _context;
+        private readonly MegaDeskContext _context;
 
-        public EditModel(CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context context)
+        public EditModel(MegaDeskContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.RushTypes
                 return NotFound();
             }
 
-            RushType = await _context.RushType.FirstOrDefaultAsync(m => m.id == id);
+            RushType = await _context.RushType.FirstOrDefaultAsync(m => m.Id == id);
 
             if (RushType == null)
             {
@@ -56,7 +56,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.RushTypes
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RushTypeExists(RushType.id))
+                if (!RushTypeExists(RushType.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.RushTypes
 
         private bool RushTypeExists(int id)
         {
-            return _context.RushType.Any(e => e.id == id);
+            return _context.RushType.Any(e => e.Id == id);
         }
     }
 }

@@ -9,9 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using CIT365_W9_MegaDeskV2.Data;
+using MegaDesk.Data;
 
-namespace CIT365_W9_MegaDeskV2
+namespace MegaDesk
 {
     public class Startup
     {
@@ -27,8 +27,8 @@ namespace CIT365_W9_MegaDeskV2
         {
             services.AddRazorPages();
 
-            services.AddDbContext<CIT365_W9_MegaDeskV2Context>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("CIT365_W9_MegaDeskV2Context")));
+            services.AddDbContext<MegaDeskContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("MegaDeskContext")));
 
             System.Diagnostics.Debug.WriteLine("Configuration Finished.");
 

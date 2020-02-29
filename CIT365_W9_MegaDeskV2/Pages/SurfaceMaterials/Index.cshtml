@@ -1,5 +1,5 @@
 ﻿@page
-@model CIT365_W9_MegaDeskV2.Pages.SurfaceMaterials.IndexModel
+@model MegaDesk.Pages.SurfaceMaterials.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,13 +14,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.SurfaceMaterial[0].description)
+                @Html.DisplayNameFor(model => model.SurfaceMaterial[0].Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SurfaceMaterial[0].cost)
+                @Html.DisplayNameFor(model => model.SurfaceMaterial[0].Cost)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SurfaceMaterial[0].imageFile)
+                @Html.DisplayNameFor(model => model.SurfaceMaterial[0].ImageFile)
             </th>
             <th></th>
         </tr>
@@ -29,18 +29,18 @@
 @foreach (var item in Model.SurfaceMaterial) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.description)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cost)
+                @Html.DisplayFor(modelItem => item.Cost)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.imageFile)
+                @Html.DisplayFor(modelItem => item.ImageFile)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+                <a asp-page="./Edit" asp-route-Id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-Id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-Id="@item.Id">Delete</a>
             </td>
         </tr>
 }

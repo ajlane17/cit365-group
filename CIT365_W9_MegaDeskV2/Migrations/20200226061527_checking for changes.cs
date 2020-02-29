@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace CIT365_W9_MegaDeskV2.Migrations
+namespace MegaDesk.Migrations
 {
     public partial class checkingforchanges : Migration
     {

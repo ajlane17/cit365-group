@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CIT365_W9_MegaDeskV2.Models
+namespace MegaDesk.Models
 {
     public class SurfaceMaterial
     {
@@ -14,19 +14,19 @@ namespace CIT365_W9_MegaDeskV2.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Display(Name = "Surface Material Option ID")]
-        public int id { get; set; }
+        public int Id { get; set; }
         //[Required]
         [StringLength(30)]
         [Display(Name = "Surface Material Description")]
-        public string description { get; set; }
+        public string Description { get; set; }
         [Display(Name = "Cost Per Unit")]
         [DataType(DataType.Currency)]
-        public float cost { get; set; }
+        public decimal Cost { get; set; }
 
         [StringLength(30,ErrorMessage ="Maximum length 30")]
         [RegularExpression(@"^[\w,\s-]+\.(jpg|png|gif)$", ErrorMessage ="Must be a JPG, PNG, or GIF image filename no path")]
         [Display(Name = "Image File Name")]
-        public string imageFile { get; set; }
+        public string ImageFile { get; set; }
 
     }
 }
