@@ -31,7 +31,7 @@ namespace MegaDesk.Pages.DeskQuotes
             DeskQuote = await _context.DeskQuote
                 .Include(s => s.Desk)
                 .AsNoTracking()
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (DeskQuote == null)
             {
