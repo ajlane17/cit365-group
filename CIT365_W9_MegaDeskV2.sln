@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29820.132
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIT365_W9_MegaDeskV2", "CIT365_W9_MegaDeskV2\CIT365_W9_MegaDeskV2.csproj", "{DB3EE5BB-F11E-4291-A40D-CF7A64EE4CA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MegaDesk", "CIT365_W9_MegaDeskV2\MegaDesk.csproj", "{DB3EE5BB-F11E-4291-A40D-CF7A64EE4CA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,5 @@
 ﻿@page
-@model CIT365_W9_MegaDeskV2.Pages.SurfaceMaterials.EditModel
+@model MegaDesk.Pages.SurfaceMaterials.EditModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -13,21 +13,21 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="SurfaceMaterial.id" />
+            <input type="hidden" asp-for="SurfaceMaterial.Id" />
             <div class="form-group">
-                <label asp-for="SurfaceMaterial.description" class="control-label"></label>
-                <input asp-for="SurfaceMaterial.description" class="form-control" />
-                <span asp-validation-for="SurfaceMaterial.description" class="text-danger"></span>
+                <label asp-for="SurfaceMaterial.Description" class="control-label"></label>
+                <input asp-for="SurfaceMaterial.Description" class="form-control" />
+                <span asp-validation-for="SurfaceMaterial.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SurfaceMaterial.cost" class="control-label"></label>
-                <input asp-for="SurfaceMaterial.cost" class="form-control" />
-                <span asp-validation-for="SurfaceMaterial.cost" class="text-danger"></span>
+                <label asp-for="SurfaceMaterial.Cost" class="control-label"></label>
+                <input asp-for="SurfaceMaterial.Cost" class="form-control" />
+                <span asp-validation-for="SurfaceMaterial.Cost" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SurfaceMaterial.imageFile" class="control-label"></label>
-                <input asp-for="SurfaceMaterial.imageFile" class="form-control" />
-                <span asp-validation-for="SurfaceMaterial.imageFile" class="text-danger"></span>
+                <label asp-for="SurfaceMaterial.ImageFile" class="control-label"></label>
+                <input asp-for="SurfaceMaterial.ImageFile" class="form-control" />
+                <span asp-validation-for="SurfaceMaterial.ImageFile" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using CIT365_W9_MegaDeskV2.Data;
-using CIT365_W9_MegaDeskV2.Models;
+using MegaDesk.Data;
+using MegaDesk.Models;
 
-namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
+namespace MegaDesk.Pages.DeskQuotes
 {
     public class DetailsModel : DeskQuotePageModel
     {
-        private readonly CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context _context;
+        private readonly MegaDeskContext _context;
 
-        public DetailsModel(CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context context)
+        public DetailsModel(MegaDeskContext context)
         {
             _context = context;
         }

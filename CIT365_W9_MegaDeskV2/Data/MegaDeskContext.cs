@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using CIT365_W9_MegaDeskV2.Models;
+using MegaDesk.Models;
 
-namespace CIT365_W9_MegaDeskV2.Data
+namespace MegaDesk.Data
 {
-    public class CIT365_W9_MegaDeskV2Context : DbContext
+    public class MegaDeskContext : DbContext
     {
-        public CIT365_W9_MegaDeskV2Context (DbContextOptions<CIT365_W9_MegaDeskV2Context> options)
+        public MegaDeskContext (DbContextOptions<MegaDeskContext> options)
             : base(options)
         {
         }
 
-        public DbSet<CIT365_W9_MegaDeskV2.Models.DeskQuote> DeskQuote { get; set; }
-        public DbSet<CIT365_W9_MegaDeskV2.Models.Desk> Desk { get; set; }
-        public DbSet<CIT365_W9_MegaDeskV2.Models.RushType> RushType { get; set; }
-        public DbSet<CIT365_W9_MegaDeskV2.Models.SurfaceMaterial> SurfaceMaterial { get; set; }
+        public DbSet<DeskQuote> DeskQuote { get; set; }
+        public DbSet<Desk> Desk { get; set; }
+        public DbSet<RushType> RushType { get; set; }
+        public DbSet<SurfaceMaterial> SurfaceMaterial { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

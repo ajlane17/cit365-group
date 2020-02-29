@@ -1,17 +1,17 @@
-﻿using CIT365_W9_MegaDeskV2.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MegaDesk.Models;
 
-namespace CIT365_W9_MegaDeskV2
+namespace MegaDesk
 {
     public class Helper
     {
         //For purposes of this project, there should only be a single instance of these settings so we will not be scaffolding or creating a UI for this.
         public const int baseCost = 200, drawerCost = 50;
 
-        //Constants for surface area cost
+        //Constants for surface area Cost
         public const int surfaceCost = 1, surfaceCostThreshold = 1000;
 
         //Constants for shipping method thresholds
@@ -21,15 +21,15 @@ namespace CIT365_W9_MegaDeskV2
         {
             try
             {
-                //Tabulate quote cost
+                //Tabulate quote Cost
                 decimal tempCost = baseCost;
-                //Add surface area cost if > surface area threshold (i.e. 1,000)
+                //Add surface area Cost if > surface area threshold (i.e. 1,000)
                 decimal surfaceArea = dq.Desk.Width * dq.Desk.Depth;
                 if (surfaceArea > surfaceCostThreshold) tempCost += surfaceArea * surfaceCost;
-                //Add drawer cost
+                //Add drawer Cost
                 tempCost += dq.Desk.Drawers * drawerCost;
-                //Add surface material cost
-                //tempCost += dq.Desk.surfaceMaterial.cost;
+                //Add surface material Cost
+                //tempCost += dq.Desk.surfaceMaterial.Cost;
                 //Add rush shipping costs based on tier and values in RushType dataset
                 //TODO: Fix rush type addition
                 //if (surfaceArea < tier1Max)

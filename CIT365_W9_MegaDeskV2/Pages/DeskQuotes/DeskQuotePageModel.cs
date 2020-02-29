@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CIT365_W9_MegaDeskV2.Data;
+using MegaDesk.Data;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 
-namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
+namespace MegaDesk.Pages.DeskQuotes
 {
     public class DeskQuotePageModel : PageModel
     {
@@ -15,23 +15,23 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
         public decimal MaterialCost { get; set; }
         public decimal ShippingCost { get; set; }
 
-        public void UpdateMaterialName(CIT365_W9_MegaDeskV2Context context, int materialId)
+        public void UpdateMaterialName(MegaDeskContext context, int materialId)
         {
             var material = context.SurfaceMaterial
-                .Single(m => m.id == materialId);
+                .Single(m => m.Id == materialId);
 
-            MaterialName = material.description;
+            MaterialName = material.Description;
         }
 
-        public void UpdateMaterialCost(CIT365_W9_MegaDeskV2Context context, int materialId)
+        public void UpdateMaterialCost(MegaDeskContext context, int materialId)
         {
             var material = context.SurfaceMaterial
-                .Single(m => m.id == materialId);
+                .Single(m => m.Id == materialId);
 
-            MaterialCost = material.cost;
+            MaterialCost = material.Cost;
         }
 
-        public void UpdateShippingName(CIT365_W9_MegaDeskV2Context context, int rushId)
+        public void UpdateShippingName(MegaDeskContext context, int rushId)
         {
             var shippingMethod = context.RushType
                 .Single(r => r.Id == rushId);
@@ -39,7 +39,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
             ShippingName = shippingMethod.Description;
         }
 
-        public void UpdateShippingCost(CIT365_W9_MegaDeskV2Context context, IConfiguration configuration, int rushId, int surfaceArea)
+        public void UpdateShippingCost(MegaDeskContext context, IConfiguration configuration, int rushId, int surfaceArea)
         {
             var shippingMethod = context.RushType
                 .Single(r => r.Id == rushId);

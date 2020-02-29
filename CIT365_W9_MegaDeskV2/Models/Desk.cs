@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CIT365_W9_MegaDeskV2.Models
+namespace MegaDesk.Models
 {
     public class Desk
     {

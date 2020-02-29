@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using CIT365_W9_MegaDeskV2.Data;
-using CIT365_W9_MegaDeskV2.Models;
 using System.Web;
+using MegaDesk.Data;
+using MegaDesk.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
+namespace MegaDesk.Pages.DeskQuotes
 {
     public class CreateModel : DeskQuotePageModel
     {
-        private readonly CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context _context;
+        private readonly MegaDeskContext _context;
         private readonly IConfiguration _configuration;
 
         public List<SelectListItem> Countries { get; } = new List<SelectListItem>
@@ -27,7 +27,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
         public List<SelectListItem> RushTypeList { get; set; }
         public List<SelectListItem> SurfaceMaterialList { get; set; }
 
-        public CreateModel(CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context context, IConfiguration configuration)
+        public CreateModel(MegaDeskContext context, IConfiguration configuration)
         {
             _context = context;
             _configuration = configuration;
@@ -42,8 +42,8 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
             SurfaceMaterialList = context.SurfaceMaterial.Select(a =>
                 new SelectListItem
                 {
-                    Value = a.id.ToString(),
-                    Text = a.description
+                    Value = a.Id.ToString(),
+                    Text = a.Description
                 }).ToList();
 
         }

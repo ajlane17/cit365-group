@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using CIT365_W9_MegaDeskV2.Models;
-using CIT365_W9_MegaDeskV2.Data;
+using MegaDesk.Data;
+using MegaDesk.Models;
 
-namespace CIT365_W9_MegaDeskV2.Pages.SurfaceMaterials
+namespace MegaDesk.Pages.SurfaceMaterials
 {
     public class DeleteModel : PageModel
     {
-        private readonly CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context _context;
+        private readonly MegaDeskContext _context;
 
-        public DeleteModel(CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context context)
+        public DeleteModel(MegaDeskContext context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.SurfaceMaterials
                 return NotFound();
             }
 
-            SurfaceMaterial = await _context.SurfaceMaterial.FirstOrDefaultAsync(m => m.id == id);
+            SurfaceMaterial = await _context.SurfaceMaterial.FirstOrDefaultAsync(m => m.Id == id);
 
             if (SurfaceMaterial == null)
             {

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace CIT365_W9_MegaDeskV2.Pages
+namespace MegaDesk.Pages
 {
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : PageModel

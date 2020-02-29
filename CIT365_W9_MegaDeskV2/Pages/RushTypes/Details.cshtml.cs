@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using CIT365_W9_MegaDeskV2.Models;
-using CIT365_W9_MegaDeskV2.Data;
+using MegaDesk.Data;
+using MegaDesk.Models;
 
-namespace CIT365_W9_MegaDeskV2.Pages.RushTypes
+namespace MegaDesk.Pages.RushTypes
 {
     public class DetailsModel : PageModel
     {
-        private readonly CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context _context;
+        private readonly MegaDeskContext _context;
 
-        public DetailsModel(CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context context)
+        public DetailsModel(MegaDeskContext context)
         {
             _context = context;
         }

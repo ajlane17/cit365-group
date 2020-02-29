@@ -4,16 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using CIT365_W9_MegaDeskV2.Data;
+using MegaDesk.Data;
 
-namespace CIT365_W9_MegaDeskV2.Models
+namespace MegaDesk.Models
 {
     public class SeedData
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            using (var context = new CIT365_W9_MegaDeskV2Context(
-                serviceProvider.GetRequiredService<DbContextOptions<CIT365_W9_MegaDeskV2Context>>()))
+            using (var context = new MegaDeskContext(
+                serviceProvider.GetRequiredService<DbContextOptions<MegaDeskContext>>()))
             {
                 //Look for any surface materials and add if missing.
                 if (!context.SurfaceMaterial.Any())
@@ -21,33 +21,33 @@ namespace CIT365_W9_MegaDeskV2.Models
                     context.SurfaceMaterial.AddRange(
                         new SurfaceMaterial
                         {
-                            description = "Pine",
-                            cost = 50,
-                            imageFile = "pine.jpg"
+                            Description = "Pine",
+                            Cost = 50,
+                            ImageFile = "pine.jpg"
                         },
                         new SurfaceMaterial
                         {
-                            description = "Laminate",
-                            cost = 100,
-                            imageFile = "laminate.jpg"
+                            Description = "Laminate",
+                            Cost = 100,
+                            ImageFile = "laminate.jpg"
                         },
                         new SurfaceMaterial
                         {
-                            description = "Veneer",
-                            cost = 125,
-                            imageFile = "veneer.jpg"
+                            Description = "Veneer",
+                            Cost = 125,
+                            ImageFile = "veneer.jpg"
                         },
                         new SurfaceMaterial
                         {
-                            description = "Oak",
-                            cost = 200,
-                            imageFile = "oak.jpg"
+                            Description = "Oak",
+                            Cost = 200,
+                            ImageFile = "oak.jpg"
                         },
                         new SurfaceMaterial
                         {
-                            description = "Rosewood",
-                            cost = 300,
-                            imageFile = "rosewood.jpg"
+                            Description = "Rosewood",
+                            Cost = 300,
+                            ImageFile = "rosewood.jpg"
                         }
 
                     );

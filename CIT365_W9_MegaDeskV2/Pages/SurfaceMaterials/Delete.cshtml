@@ -1,5 +1,5 @@
 ﻿@page
-@model CIT365_W9_MegaDeskV2.Pages.SurfaceMaterials.DeleteModel
+@model MegaDesk.Pages.SurfaceMaterials.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -13,27 +13,27 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SurfaceMaterial.description)
+            @Html.DisplayNameFor(model => model.SurfaceMaterial.Description)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SurfaceMaterial.description)
+            @Html.DisplayFor(model => model.SurfaceMaterial.Description)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SurfaceMaterial.cost)
+            @Html.DisplayNameFor(model => model.SurfaceMaterial.Cost)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SurfaceMaterial.cost)
+            @Html.DisplayFor(model => model.SurfaceMaterial.Cost)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SurfaceMaterial.imageFile)
+            @Html.DisplayNameFor(model => model.SurfaceMaterial.ImageFile)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SurfaceMaterial.imageFile)
+            @Html.DisplayFor(model => model.SurfaceMaterial.ImageFile)
         </dd>
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="SurfaceMaterial.id" />
+        <input type="hidden" asp-for="SurfaceMaterial.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-page="./Index">Back to List</a>
     </form>

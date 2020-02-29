@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CIT365_W9_MegaDeskV2.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using CIT365_W9_MegaDeskV2.Data;
+using MegaDesk.Data;
+using MegaDesk.Models;
 
-namespace CIT365_W9_MegaDeskV2
+namespace MegaDesk
 {
     public class Program
     {
@@ -45,7 +45,7 @@ namespace CIT365_W9_MegaDeskV2
 
                 try
                 {
-                    var context = services.GetRequiredService<CIT365_W9_MegaDeskV2Context>();
+                    var context = services.GetRequiredService<MegaDeskContext>();
                     //Ensure created will create a database that doesn't support migrations.  Temporarily uncomment if needed.   Dan C.
                     context.Database.EnsureCreated();
                 }

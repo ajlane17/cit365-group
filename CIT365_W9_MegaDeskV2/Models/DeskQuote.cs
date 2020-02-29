@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace CIT365_W9_MegaDeskV2.Models
+namespace MegaDesk.Models
 {
     public class DeskQuote
     {
