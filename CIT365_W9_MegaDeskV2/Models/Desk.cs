@@ -18,7 +18,7 @@ namespace MegaDesk.Models
         [Display(Name = "Desk Width (24-96 inches)")]
         [Range(24, 96, ErrorMessage = "Width must be between 24 and 96 inches.")]
         public int Width { get; set; }
-        [Display(Name = "Desk Height (12-48 inches)")]
+        [Display(Name = "Desk Depth (12-48 inches)")]
         [Range(12, 48, ErrorMessage = "Depth must be between 12 and 48 inches.")]
         public int Depth { get; set; }
         [Display(Name = "Drawer Count (0-7)")]

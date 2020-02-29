@@ -22,13 +22,19 @@ namespace MegaDesk.Models
         //[Required(ErrorMessage = "A shipping method must be selected.")]
         public int RushId { get; set; }
 
+        [DataType(DataType.Currency)]
         public decimal PricePerSquareInch { get; set; }
+        [DataType(DataType.Currency)]
         public decimal PricePerDrawer { get; set; }
+        [DataType(DataType.Currency)]
         public decimal BasePrice { get; set; }
         public int SurfacePriceFloor { get; set; }
+        [DataType(DataType.Currency)]
         public decimal MaterialCost { get; set; }
+        [DataType(DataType.Currency)]
         public decimal ShippingCost { get; set; }
 
+        [DataType(DataType.Currency)]
         public decimal DrawerCost
         {
             get
@@ -48,6 +54,7 @@ namespace MegaDesk.Models
             }
         }
 
+        [DataType(DataType.Currency)]
         public decimal SizeCost
         {
             get

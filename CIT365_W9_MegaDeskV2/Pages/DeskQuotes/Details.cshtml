@@ -19,21 +19,21 @@
         </dd>
 
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Desk.Width)
+            Desk Width
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DeskQuote.Desk.Width)
         </dd>
 
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Desk.Depth)
+            Desk Depth
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DeskQuote.Desk.Depth)
         </dd>
 
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Desk.Drawers)
+            Drawer Count
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DeskQuote.Desk.Drawers)
@@ -47,10 +47,66 @@
         </dd>
 
         <dt class="col-sm-2">
+            Material Cost
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.MaterialCost)
+        </dd>
+
+        <dt class="col-sm-2">
             Shipping Method
         </dt>
         <dd class="col-sm-10">
             @Model.ShippingName
+        </dd>
+
+        <dt class="col-sm-2">
+            Shipping Cost
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.ShippingCost)
+        </dd>
+
+        <dt class="col-sm-2">
+            Price Per Drawer
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.PricePerDrawer)
+        </dd>
+
+        <dt class="col-sm-2">
+            Drawer Cost
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.DrawerCost)
+        </dd>
+
+        <dt class="col-sm-2">
+            Base Price
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.BasePrice)
+        </dd>
+
+        <dt class="col-sm-2">
+            Included Size
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.SurfacePriceFloor)
+        </dd>
+
+        <dt class="col-sm-2">
+            Size Overage
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.SizeOverage)
+        </dd>
+
+        <dt class="col-sm-2">
+            Overage Cost
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DeskQuote.SizeCost)
         </dd>
 
         <dt class="col-sm-2">
