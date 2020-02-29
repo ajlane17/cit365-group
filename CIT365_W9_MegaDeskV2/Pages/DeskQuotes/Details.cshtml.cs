@@ -10,7 +10,7 @@ using CIT365_W9_MegaDeskV2.Models;
 
 namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
 {
-    public class DetailsModel : PageModel
+    public class DetailsModel : DeskQuotePageModel
     {
         private readonly CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context _context;
 
@@ -28,9 +28,8 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
                 return NotFound();
             }
 
-            //DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.id == id);
             DeskQuote = await _context.DeskQuote
-                .Include(s => s.desk)
+                .Include(s => s.Desk)
                 .AsNoTracking()
                 .FirstOrDefaultAsync();
 
@@ -38,6 +37,9 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
             {
                 return NotFound();
             }
+
+            UpdateMaterialName(_context, DeskQuote.Desk.SurfaceMaterialId);
+            UpdateShippingName(_context, DeskQuote.RushId);
             return Page();
         }
     }

@@ -60,31 +60,31 @@ namespace CIT365_W9_MegaDeskV2.Models
                     context.RushType.AddRange(
                         new RushType
                         {
-                            description = "Standard Shipping",
-                            tier1Cost=0,
-                            tier2Cost=0,
-                            tier3Cost=0
+                            Description = "Standard Shipping",
+                            Tier1Cost=0,
+                            Tier2Cost=0,
+                            Tier3Cost=0
                         },
                         new RushType
                         {
-                            description = "7-Day Shipping",
-                            tier1Cost = 30,
-                            tier2Cost = 35,
-                            tier3Cost = 40
+                            Description = "7-Day Shipping",
+                            Tier1Cost = 30,
+                            Tier2Cost = 35,
+                            Tier3Cost = 40
                         },
                         new RushType
                         {
-                            description = "5-Day Shipping",
-                            tier1Cost = 40,
-                            tier2Cost = 50,
-                            tier3Cost = 60
+                            Description = "5-Day Shipping",
+                            Tier1Cost = 40,
+                            Tier2Cost = 50,
+                            Tier3Cost = 60
                         },
                         new RushType
                         {
-                            description = "3-Day Shipping",
-                            tier1Cost = 60,
-                            tier2Cost = 70,
-                            tier3Cost = 80
+                            Description = "3-Day Shipping",
+                            Tier1Cost = 60,
+                            Tier2Cost = 70,
+                            Tier3Cost = 80
                         }
                     );
                     context.SaveChanges();

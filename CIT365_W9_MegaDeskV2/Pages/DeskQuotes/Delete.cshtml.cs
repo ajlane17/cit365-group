@@ -29,7 +29,10 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
                 return NotFound();
             }
 
-            DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.id == id);
+            DeskQuote = await _context.DeskQuote
+                .AsNoTracking()
+                .Include(d => d.Desk)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (DeskQuote == null)
             {

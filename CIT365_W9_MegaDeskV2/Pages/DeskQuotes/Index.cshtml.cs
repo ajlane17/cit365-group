@@ -27,8 +27,8 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
         {
             //DeskQuote = await _context.DeskQuote.ToListAsync();
             DeskQuote = await _context.DeskQuote
-                .Include(s => s.desk)
-                //.Include(t => t.desk.surfaceMaterial)
+                .Include(s => s.Desk)
+                //.Include(t => t.Desk.surfaceMaterial)
                 .AsNoTracking()
                 .ToListAsync();
         }

@@ -17,32 +17,32 @@ namespace CIT365_W9_MegaDeskV2
         //Constants for shipping method thresholds
         public const int tier1Max = 1000, tier2Max = 2000;
 
-        public double CalcCost(ref DeskQuote dq)
+        public decimal CalcCost(ref DeskQuote dq)
         {
             try
             {
                 //Tabulate quote cost
-                double tempCost = baseCost;
+                decimal tempCost = baseCost;
                 //Add surface area cost if > surface area threshold (i.e. 1,000)
-                double surfaceArea = dq.desk.width * dq.desk.depth;
+                decimal surfaceArea = dq.Desk.Width * dq.Desk.Depth;
                 if (surfaceArea > surfaceCostThreshold) tempCost += surfaceArea * surfaceCost;
                 //Add drawer cost
-                tempCost += dq.desk.drawers * drawerCost;
+                tempCost += dq.Desk.Drawers * drawerCost;
                 //Add surface material cost
-                //tempCost += dq.desk.surfaceMaterial.cost;
+                //tempCost += dq.Desk.surfaceMaterial.cost;
                 //Add rush shipping costs based on tier and values in RushType dataset
                 //TODO: Fix rush type addition
                 //if (surfaceArea < tier1Max)
                 //{
-                //    tempCost += dq.rushType.tier1Cost;
+                //    tempCost += dq.rushType.Tier1Cost;
                 //}
                 //else if (surfaceArea < tier2Max)
                 //{
-                //    tempCost += dq.rushType.tier2Cost;
+                //    tempCost += dq.rushType.Tier2Cost;
                 //}
                 //else
                 //{
-                //    tempCost += dq.rushType.tier3Cost;
+                //    tempCost += dq.rushType.Tier3Cost;
                 //}
                 return tempCost;
             }

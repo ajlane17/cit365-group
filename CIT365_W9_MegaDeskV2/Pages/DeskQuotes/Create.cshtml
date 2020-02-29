@@ -14,43 +14,38 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="DeskQuote.customerName" class="control-label"></label>
-                <input asp-for="DeskQuote.customerName" class="form-control" />
-                <span asp-validation-for="DeskQuote.customerName" class="text-danger"></span>
+                <label asp-for="DeskQuote.CustomerName" class="control-label"></label>
+                <input asp-for="DeskQuote.CustomerName" class="form-control" />
+                <span asp-validation-for="DeskQuote.CustomerName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.desk.depth" class="control-label"></label>
-                <input asp-for="DeskQuote.desk.depth" class="form-control" />
-                <span asp-validation-for="DeskQuote.desk.depth" class="text-danger"></span>
+                <label asp-for="DeskQuote.Desk.Depth" class="control-label"></label>
+                <input asp-for="DeskQuote.Desk.Depth" class="form-control" />
+                <span asp-validation-for="DeskQuote.Desk.Depth" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.desk.width" class="control-label"></label>
-                <input asp-for="DeskQuote.desk.width" class="form-control" />
-                <span asp-validation-for="DeskQuote.desk.width" class="text-danger"></span>
+                <label asp-for="DeskQuote.Desk.Width" class="control-label"></label>
+                <input asp-for="DeskQuote.Desk.Width" class="form-control" />
+                <span asp-validation-for="DeskQuote.Desk.Width" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeskQuote.desk.drawers" class="control-label"></label>
-                <input asp-for="DeskQuote.desk.drawers" class="form-control" />
-                <span asp-validation-for="DeskQuote.desk.drawers" class="text-danger"></span>
+                <label asp-for="DeskQuote.Desk.Drawers" class="control-label"></label>
+                <input asp-for="DeskQuote.Desk.Drawers" class="form-control" />
+                <span asp-validation-for="DeskQuote.Desk.Drawers" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="DeskQuote.desk.surfaceMaterialID" class="control-label"></label>
-                <select asp-for="DeskQuote.desk.surfaceMaterialID" asp-items="Model.SurfaceMaterialList"></select>
-                <span asp-validation-for="DeskQuote.desk.surfaceMaterialID" class="text-danger"></span>
+                <label asp-for="DeskQuote.Desk.SurfaceMaterialId" class="control-label"></label>
+                <select asp-for="DeskQuote.Desk.SurfaceMaterialId" asp-items="Model.SurfaceMaterialList"></select>
+                <span asp-validation-for="DeskQuote.Desk.SurfaceMaterialId" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="DeskQuote.rushID" class="control-label"></label>
-                <select  asp-for="DeskQuote.rushID" asp-items="Model.RushTypeList"></select>
-                <span asp-validation-for="DeskQuote.rushID" class="text-danger"></span>
+                <label asp-for="DeskQuote.RushId" class="control-label"></label>
+                <select  asp-for="DeskQuote.RushId" asp-items="Model.RushTypeList"></select>
+                <span asp-validation-for="DeskQuote.RushId" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <label asp-for="DeskQuote.totalQuote" class="control-label"></label>
-                <input asp-for="DeskQuote.totalQuote" class="form-control" />
-                <span asp-validation-for="DeskQuote.totalQuote" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

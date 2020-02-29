@@ -29,7 +29,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.RushTypes
                 return NotFound();
             }
 
-            RushType = await _context.RushType.FirstOrDefaultAsync(m => m.id == id);
+            RushType = await _context.RushType.FirstOrDefaultAsync(m => m.Id == id);
 
             if (RushType == null)
             {

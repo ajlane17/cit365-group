@@ -8,22 +8,25 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CIT365_W9_MegaDeskV2.Data;
 using CIT365_W9_MegaDeskV2.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
 {
-    public class EditModel : PageModel
+    public class EditModel : DeskQuotePageModel
     {
         private readonly CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context _context;
+        private readonly IConfiguration _configuration;
 
-        public EditModel(CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context context)
+        public EditModel(CIT365_W9_MegaDeskV2.Data.CIT365_W9_MegaDeskV2Context context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
 
             RushTypeList = context.RushType.Select(a =>
                                             new SelectListItem
                                             {
-                                                Value = a.id.ToString(),
-                                                Text = a.description
+                                                Value = a.Id.ToString(),
+                                                Text = a.Description
                                             }).ToList();
 
             SurfaceMaterialList = context.SurfaceMaterial.Select(a =>
@@ -49,14 +52,13 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
                 return NotFound();
             }
 
-            //DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.id == id);
+            //DeskQuote = await _context.DeskQuote.FirstOrDefaultAsync(m => m.Id == Id);
 
             //Pull in related tables
             DeskQuote = await _context.DeskQuote
-                .Include(s => s.desk)
-                //.Include(t => t.desk.surfaceMaterial)
+                .Include(s => s.Desk)
                 .AsNoTracking()
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (DeskQuote == null)
             {
@@ -74,6 +76,12 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
                 return Page();
             }
 
+            UpdateMaterialCost(_context, DeskQuote.Desk.SurfaceMaterialId);
+            UpdateShippingCost(_context, _configuration, DeskQuote.RushId, DeskQuote.Desk.SurfaceArea);
+
+            DeskQuote.MaterialCost = MaterialCost;
+            DeskQuote.ShippingCost = ShippingCost;
+
             _context.Attach(DeskQuote).State = EntityState.Modified;
 
             try
@@ -82,7 +90,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!DeskQuoteExists(DeskQuote.id))
+                if (!DeskQuoteExists(DeskQuote.Id))
                 {
                     return NotFound();
                 }
@@ -97,7 +105,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.DeskQuotes
 
         private bool DeskQuoteExists(int id)
         {
-            return _context.DeskQuote.Any(e => e.id == id);
+            return _context.DeskQuote.Any(e => e.Id == id);
         }
     }
 }

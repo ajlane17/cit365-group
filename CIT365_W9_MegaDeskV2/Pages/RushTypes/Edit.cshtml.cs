@@ -30,7 +30,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.RushTypes
                 return NotFound();
             }
 
-            RushType = await _context.RushType.FirstOrDefaultAsync(m => m.id == id);
+            RushType = await _context.RushType.FirstOrDefaultAsync(m => m.Id == id);
 
             if (RushType == null)
             {
@@ -56,7 +56,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.RushTypes
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RushTypeExists(RushType.id))
+                if (!RushTypeExists(RushType.Id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace CIT365_W9_MegaDeskV2.Pages.RushTypes
 
         private bool RushTypeExists(int id)
         {
-            return _context.RushType.Any(e => e.id == id);
+            return _context.RushType.Any(e => e.Id == id);
         }
     }
 }

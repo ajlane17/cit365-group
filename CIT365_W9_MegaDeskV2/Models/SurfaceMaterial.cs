@@ -21,7 +21,7 @@ namespace CIT365_W9_MegaDeskV2.Models
         public string description { get; set; }
         [Display(Name = "Cost Per Unit")]
         [DataType(DataType.Currency)]
-        public float cost { get; set; }
+        public decimal cost { get; set; }
 
         [StringLength(30,ErrorMessage ="Maximum length 30")]
         [RegularExpression(@"^[\w,\s-]+\.(jpg|png|gif)$", ErrorMessage ="Must be a JPG, PNG, or GIF image filename no path")]
