@@ -14,10 +14,8 @@ namespace CIT365_W9_MegaDeskV2.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Display(Name = "Rush Option ID")]
-        [ScaffoldColumn(false)]
         public int id { get; set; }
         [Display(Name = "Shipping Option")]
-        [Required]
         public string description { get; set; }
         [Display(Name = "Tier 1 cost (up to 1000 sq ft)")]
         public float tier1Cost { get; set; }

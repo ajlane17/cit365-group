@@ -14,9 +14,8 @@ namespace CIT365_W9_MegaDeskV2.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         [Display(Name = "Surface Material Option ID")]
-        [ScaffoldColumn(false)]
         public int id { get; set; }
-        [Required]
+        //[Required]
         [StringLength(30)]
         [Display(Name = "Surface Material Description")]
         public string description { get; set; }
