@@ -233,4 +233,8 @@ input.btn btn-primary {
 .image {
     display: none;
     max-width:300px;
+}
+
+.image img{
+    max-width: 300px;
 }  
