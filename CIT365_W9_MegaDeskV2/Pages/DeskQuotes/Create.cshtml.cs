@@ -36,7 +36,8 @@ namespace MegaDesk.Pages.DeskQuotes
                 new SelectListItem
                 {
                     Value = a.Id.ToString(),
-                    Text = a.Description
+                    Text = a.Description,
+                    Selected = a.Id==0 ? true : false
                 }).ToList();
 
             SurfaceMaterialList = context.SurfaceMaterial.Select(a =>
