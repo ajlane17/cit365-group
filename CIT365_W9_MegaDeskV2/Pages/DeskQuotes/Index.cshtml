@@ -18,7 +18,7 @@
     <thead class="thead-dark">
         <tr>
             <th onclick="sortTable(0)">
-              date
+              Date
             </th>
             <th onclick="sortTable(1)">
                 @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
@@ -50,8 +50,8 @@
         {
         <tr>
             <td>
-                date
-             </td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CustomerName)
             </td>

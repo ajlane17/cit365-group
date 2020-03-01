@@ -76,7 +76,8 @@ namespace MegaDesk.Pages.DeskQuotes
                 BasePrice = Decimal.Parse(_configuration["Pricing:BasePrice"]),
                 PricePerDrawer = Decimal.Parse(_configuration["Pricing:PricePerDrawer"]),
                 PricePerSquareInch = Decimal.Parse(_configuration["Pricing:PricePerSquareInch"]),
-                SurfacePriceFloor = int.Parse(_configuration["Pricing:SurfacePricingFloor"])
+                SurfacePriceFloor = int.Parse(_configuration["Pricing:SurfacePricingFloor"]),
+                CreatedDate = DateTime.UtcNow
             };
             
             if (await TryUpdateModelAsync<DeskQuote>(

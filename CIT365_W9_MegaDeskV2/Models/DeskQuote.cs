@@ -43,6 +43,11 @@ namespace MegaDesk.Models
             }
         }
 
+        [Required]
+        [Display(Name = "Created")]
+        [DataType(DataType.Date)]
+        public DateTime CreatedDate { get; set; }
+
         public int SizeOverage
         {
             get
