@@ -1,6 +1,14 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+
+body {
+    background-size: cover;
+    background-position: center center;
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/wildtextures-dark-wood-board.jpg");
+}
+
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -63,9 +71,161 @@ body {
   margin-bottom: 60px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background: rgba(37, 2, 2, 0.84);
+    color:beige;
+}
+
+
+/* Tables */
+
+#megaDeskInput {
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 60%;
+    color: beige;
+    background: #36140f47;
+    font-size: 16px;
+    padding: 5px;
+    border: solid beige 1px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+}
+    #megaDeskInput::placeholder{
+        color:beige;
+    }
+#megaDeskTable {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px;
+    background: beige;
+}
+
+    #megaDeskTable th, #megaDeskTable td {
+        text-align: left;
+        padding: 12px;
+    }
+
+    #megaDeskTable tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+        #megaDeskTable tr.header, #megaDeskTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+
+.card.posted {
+    background-color: #ff9;
+    box-shadow: 0 3px 5px -3px #000;
+    float: right;
+    font-family: cursive;
+    font-size: 16px;
+    font-style: italic;
+    padding: 3px;
+    transform: rotate(3deg);
+    transition: all .5s;
+}
+
+    .card.posted:hover {
+        transform: rotate(0deg) scale(1.1);
+        z-index:5;
+        transition: all .51s;
+    }
+
+a.card-link.cta {
+    color: red;
+}
+
+.home-title {
+    color: rgb(19, 16, 16);
+    text-align: center;
+    padding: 50px;
+    font-size: 5em;
+    text-shadow: #d5af70 1px 0 10px;
+}
+
+.bg-wood {
+    background: rgba(37, 2, 2, 0.84);
+}
+
+    .bg-wood .na {
+        background: rgba(37, 2, 2, 0.84);
+    }
+
+
+a.nav-link {
+    color: beige;
+    font-weight: 400;
+}
+
+a.navbar-brand {
+    font-weight: bold;
+    color: beige;
+}
+
+span.navbar-toggler-icon {
+    color: beige;
+    border: solid 1px beige;
+    border-radius: 2px;
+    overflow:hidden;
+}
+
+span.icon-bar {
+    background: beige;
+    position: relative;
+    margin: 1px;
+    padding: 1px;
+
+}
+
+#megaDeskTable .thead-dark th {
+    color: beige !important;
+    background-color: #32110f;
+}
+
+
+button#add {
+    background: #32110f;
+    border: none;
+    padding: 5px;
+    border: #ffffff00 1px solid;
+    border-radius: 5px;
+    color: beige;
+}
+
+    button#add:hover {
+        background: #32110fc4;
+        border: beige 1px solid;
+        color: beige;
+    }
+
+.section-banner {
+    height: 100px;
+}
+
+   h1 {
+        color: rgb(19, 16, 16);
+        text-align: center;
+        margin: 25px;
+        font-size: 3em;
+        padding-bottom: 5px;
+        text-shadow: #d5af70 1px 0 10px;
+        border-bottom: 5px solid #2f2f26cf;
+    }
+.container {
+    background-color: beige;
+}
+
+input.btn btn-primary {
+    background: #32110f;
+    border: none;
+    padding: 5px;
+    border: #ffffff00 1px solid;
+    border-radius: 5px;
+    color: beige;
 }

@@ -1,10 +1,48 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Mega Desk 3.0";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div class="hero">
+        <h1 class="home-title">Build Your Desk</h1>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="card posted">
+                    <div class="card-body">
+                        <h4 class="card-title">Quotes</h4>
+                        <p class="card-text">
+                            With MegaDesk 3.0 you can simple search quotes, or if you have that new customer, that needs to see you create a quote now. You can do that too.
+                        </p>
+                        <a class="card-link cta" asp-page="/DeskQuotes/Index">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="card posted">
+                    <div class="card-body">
+                        <h4 class="card-title">Material</h4>
+                        <p class="card-text">
+                            MegaDesk 3.0 lets you search on current material or if you would like to create a desk out of something else, like space debris, you can add that.
+                        </p>
+                        <a class="card-link cta" asp-page="/SurfaceMaterials/Index">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="card posted">
+                    <div class="card-body">
+                        <h4 class="card-title">Rush Orders</h4>
+                        <p class="card-text">
+                            We all need desks, some needed it yesterday. That is why with MegaDesk 3.0 we you have ability to make that an option. Granted it will be expensive.
+                        </p>
+                        <a class="card-link cta" asp-page="/RushTypes/Index">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
 </div>

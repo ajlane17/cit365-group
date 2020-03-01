@@ -4,25 +4,28 @@
 @{
     ViewData["Title"] = "Index";
 }
+    <div class="section-banner">
+        <h1>Materials</h1>
+    </div>
 
-<h1>Index</h1>
+    <a asp-page="Create"><button id="add">Create New</button></a>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+
+<input type="text" id="megaDeskInput" onkeyup="megaDeskFunction()" placeholder="Search by Material" title="Type in a name">
+<table class="table table-hover" id="megaDeskTable">
+    <thead  class="thead-dark">
+      
         <tr>
-            <th>
+            <th onclick="sortTable(0)">
                 @Html.DisplayNameFor(model => model.SurfaceMaterial[0].Description)
             </th>
-            <th>
+            <th onclick="sortTable(2)">
                 @Html.DisplayNameFor(model => model.SurfaceMaterial[0].Cost)
             </th>
-            <th>
+            <th onclick="sortTable(3)">
                 @Html.DisplayNameFor(model => model.SurfaceMaterial[0].ImageFile)
             </th>
-            <th></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -38,9 +41,20 @@
                 @Html.DisplayFor(modelItem => item.ImageFile)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-Id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-Id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-Id="@item.Id">Delete</a>
+
+                <div class="dropdown open">
+                    <button class="btn btn-secondary dropdown-toggle"
+                            type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        Options
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" asp-page="./Edit" asp-route-Id="@item.Id">Edit</a>
+                        <a class="dropdown-item" asp-page="./Details" asp-route-Id="@item.Id">Details</a>
+                        <a class="dropdown-item" asp-page="./Delete" asp-route-Id="@item.Id">Delete</a>
+                    </div>
+                </div>
+
             </td>
         </tr>
 }

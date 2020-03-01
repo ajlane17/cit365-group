@@ -2,71 +2,88 @@
 @model MegaDesk.Pages.DeskQuotes.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Desk Quote";
 }
 
-<h1>Index</h1>
+<div class="section-banner">
+    <h1>Quotes</h1>
+</div>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+
+<a asp-page="Create"><button id="add">Create New</button></a>
+
+
+<input type="text" id="megaDeskInput" onkeyup="megaDeskFunction()" placeholder="Search By Name" title="Type in a name">
+<table class="table table-hover table-responsive-sm" id="megaDeskTable">
+    <thead class="thead-dark">
         <tr>
-            <th>
+            <th onclick="sortTable(0)">
                 @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
             </th>
-            <th>
+            <th onclick="sortTable(1)">
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Width)
             </th>
-            <th>
+            <th onclick="sortTable(2)">
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Depth)
             </th>
-            <th>
+            <th onclick="sortTable(3)">
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Drawers)
             </th>
+            <th onclick="sortTable(4)">
+                Price
+            </th>
             @*<th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.SurfaceMaterialId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].RushId)
-            </th>*@
-            <th>
-                Total Price
-            </th>
-            <th></th>
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.SurfaceMaterialId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeskQuote[0].RushId)
+                </th>*@
+
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.DeskQuote) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerName)
-            </td>
-            <th>
-                @Html.DisplayFor(modelItem => item.Desk.Width)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Desk.Depth)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.Desk.Drawers)
-            </th>
-            @*<th>
-                @Html.DisplayFor(modelItem => item.Desk.SurfaceMaterialId)
-            </th>
-            <th>
-                @Html.DisplayFor(modelItem => item.RushId)
-            </th>*@
-            <td>
-                @item.QuotePrice
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-Id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-Id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-Id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.DeskQuote)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desk.Width)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desk.Depth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desk.Drawers)
+                </td>
+                @*<th>
+                        @Html.DisplayFor(modelItem => item.Desk.SurfaceMaterialId)
+                    </th>
+                    <th>
+                        @Html.DisplayFor(modelItem => item.RushId)
+                    </th>*@
+                <td>
+                    @item.QuotePrice
+                </td>
+                <td>
+
+                    <div class="dropdown open">
+                        <button class="btn btn-secondary dropdown-toggle"
+                                type="button" id="dropdownMenu1" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                            Options
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-page="./Edit" asp-route-Id="@item.Id">Edit</a>
+                            <a class="dropdown-item" asp-page="./Details" asp-route-Id="@item.Id">Details</a>
+                            <a class="dropdown-item" asp-page="./Delete" asp-route-Id="@item.Id">Delete</a>
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
