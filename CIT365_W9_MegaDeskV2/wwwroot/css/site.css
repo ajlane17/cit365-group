@@ -229,3 +229,13 @@ input.btn btn-primary {
     border-radius: 5px;
     color: beige;
 }
+
+.image {
+    display: none;
+    max-width:300px;
+}
+
+.image img{
+
+    max-width: 300px;
+}  

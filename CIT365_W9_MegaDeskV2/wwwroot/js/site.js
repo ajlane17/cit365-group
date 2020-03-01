@@ -59,3 +59,12 @@ function sortTable(n) {
         }
     }
 }
+
+
+$(document).ready(function(){
+    $('#DeskQuote_Desk_SurfaceMaterialId').on('change', function(){
+    	var image = $(this).val(); 
+        $("div.image").hide();
+        $("#"+image).show();
+    });
+});
