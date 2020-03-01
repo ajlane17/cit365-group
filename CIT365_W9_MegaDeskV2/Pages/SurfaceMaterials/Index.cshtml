@@ -16,13 +16,14 @@
     <thead  class="thead-dark">
       
         <tr>
+           
             <th onclick="sortTable(0)">
                 @Html.DisplayNameFor(model => model.SurfaceMaterial[0].Description)
             </th>
-            <th onclick="sortTable(2)">
+            <th>
                 @Html.DisplayNameFor(model => model.SurfaceMaterial[0].Cost)
             </th>
-            <th onclick="sortTable(3)">
+            <th>
                 @Html.DisplayNameFor(model => model.SurfaceMaterial[0].ImageFile)
             </th>
             <th>Action</th>
@@ -31,6 +32,7 @@
     <tbody>
 @foreach (var item in Model.SurfaceMaterial) {
         <tr>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>

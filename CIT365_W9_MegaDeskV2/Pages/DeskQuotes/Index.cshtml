@@ -18,26 +18,29 @@
     <thead class="thead-dark">
         <tr>
             <th onclick="sortTable(0)">
-                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+              date
             </th>
             <th onclick="sortTable(1)">
+                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Width)
             </th>
-            <th onclick="sortTable(2)">
+            <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Depth)
             </th>
-            <th onclick="sortTable(3)">
+            <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.Drawers)
             </th>
-            <th onclick="sortTable(4)">
+            <th>
                 Price
             </th>
             @*<th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.SurfaceMaterialId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DeskQuote[0].RushId)
-                </th>*@
+            @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.SurfaceMaterialId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeskQuote[0].RushId)
+        </th>*@
 
             <th>Action</th>
         </tr>
@@ -45,45 +48,48 @@
     <tbody>
         @foreach (var item in Model.DeskQuote)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CustomerName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Desk.Width)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Desk.Depth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Desk.Drawers)
-                </td>
-                @*<th>
-                        @Html.DisplayFor(modelItem => item.Desk.SurfaceMaterialId)
-                    </th>
-                    <th>
-                        @Html.DisplayFor(modelItem => item.RushId)
-                    </th>*@
-                <td>
-                    @item.QuotePrice
-                </td>
-                <td>
+        <tr>
+            <td>
+                date
+             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desk.Width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desk.Depth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desk.Drawers)
+            </td>
+            @*<th>
+            @Html.DisplayFor(modelItem => item.Desk.SurfaceMaterialId)
+        </th>
+        <th>
+            @Html.DisplayFor(modelItem => item.RushId)
+        </th>*@
+            <td>
+                @item.QuotePrice
+            </td>
+            <td>
 
-                    <div class="dropdown open">
-                        <button class="btn btn-secondary dropdown-toggle"
-                                type="button" id="dropdownMenu1" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                            Options
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" asp-page="./Edit" asp-route-Id="@item.Id">Edit</a>
-                            <a class="dropdown-item" asp-page="./Details" asp-route-Id="@item.Id">Details</a>
-                            <a class="dropdown-item" asp-page="./Delete" asp-route-Id="@item.Id">Delete</a>
-                        </div>
+                <div class="dropdown open">
+                    <button class="btn btn-secondary dropdown-toggle"
+                            type="button" id="dropdownMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        Options
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" asp-page="./Edit" asp-route-Id="@item.Id">Edit</a>
+                        <a class="dropdown-item" asp-page="./Details" asp-route-Id="@item.Id">Details</a>
+                        <a class="dropdown-item" asp-page="./Delete" asp-route-Id="@item.Id">Delete</a>
                     </div>
+                </div>
 
-                </td>
-            </tr>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
