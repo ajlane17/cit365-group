@@ -188,8 +188,7 @@ span.icon-bar {
     background-color: #32110f;
 }
 
-
-button#add {
+#add {
     background: #32110f;
     border: none;
     padding: 5px;
@@ -198,10 +197,11 @@ button#add {
     color: beige;
 }
 
-    button#add:hover {
+#add:hover {
         background: #32110fc4;
         border: beige 1px solid;
         color: beige;
+        text-decoration:none;
     }
 
 .section-banner {
