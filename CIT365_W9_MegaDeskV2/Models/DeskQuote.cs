@@ -21,6 +21,7 @@ namespace MegaDesk.Models
         public Desk Desk { get; set; }
         //public int deskID { get; set; }
         //[Required(ErrorMessage = "A shipping method must be selected.")]
+        [Display(Name = "Shipping Method")]
         public int RushId { get; set; }
 
         [DataType(DataType.Currency)]

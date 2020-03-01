@@ -87,6 +87,69 @@ namespace MegaDesk.Models
                             Tier3Cost = 80
                         }
                     );
+
+                    if (!context.DeskQuote.Any())
+                    {
+                        context.DeskQuote.AddRange(
+                            new DeskQuote
+                            {
+                                CustomerName = "John Smith",
+                                Desk = new Desk
+                                {
+                                    Width = 24,
+                                    Depth = 13,
+                                    Drawers = 0,
+                                    SurfaceMaterialId = 1
+                                },
+                                RushId = 4,
+                                PricePerSquareInch = 1,
+                                PricePerDrawer = 50,
+                                BasePrice = 200,
+                                SurfacePriceFloor = 1000,
+                                MaterialCost = 50,
+                                ShippingCost = 0,
+                                CreatedDate = DateTime.Parse("2020-02-27 00:00:00")
+                            },
+                            new DeskQuote
+                            {
+                                CustomerName = "Sam Smith",
+                                Desk = new Desk
+                                {
+                                    Width = 33,
+                                    Depth = 33,
+                                    Drawers = 3,
+                                    SurfaceMaterialId = 3
+                                },
+                                RushId = 2,
+                                PricePerSquareInch = 1,
+                                PricePerDrawer = 50,
+                                BasePrice = 200,
+                                SurfacePriceFloor = 1000,
+                                MaterialCost = 100,
+                                ShippingCost = 50,
+                                CreatedDate = DateTime.Parse("2020-02-28 00:00:00")
+                            }
+,
+                            new DeskQuote
+                            {
+                                CustomerName = "Sally Field",
+                                Desk = new Desk
+                                {
+                                    Width = 44,
+                                    Depth = 44,
+                                    Drawers = 7,
+                                    SurfaceMaterialId = 1
+                                },
+                                RushId = 1,
+                                PricePerSquareInch = 1,
+                                PricePerDrawer = 50,
+                                BasePrice = 200,
+                                SurfacePriceFloor = 1000,
+                                MaterialCost = 50,
+                                ShippingCost = 70,
+                                CreatedDate = DateTime.Parse("2020-02-29 00:00:00")
+                            });
+                    }
                     context.SaveChanges();
                 }
             }

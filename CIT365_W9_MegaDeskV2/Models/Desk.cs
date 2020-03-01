@@ -25,10 +25,9 @@ namespace MegaDesk.Models
         [Range(0,7,ErrorMessage = "Drawer count must be between 0 and 7.")]
         public int Drawers { get; set; }
 
-        [Display(Name = "Select Surface Material")]
+        [Display(Name = "Surface Material")]
         [Required(ErrorMessage ="A surface material must be selected.")]
         public int SurfaceMaterialId { get; set; }
-        //public SurfaceMaterial surfaceMaterial { get; set; }
 
         public int SurfaceArea
         {
