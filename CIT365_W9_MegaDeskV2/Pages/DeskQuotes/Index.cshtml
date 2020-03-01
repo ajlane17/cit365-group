@@ -37,13 +37,6 @@
                 Price
             </th>
 
-            @*<th>
-            @Html.DisplayNameFor(model => model.DeskQuote[0].Desk.SurfaceMaterialId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DeskQuote[0].RushId)
-        </th>*@
-
             <th>Action</th>
         </tr>
     </thead>
@@ -67,19 +60,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Desk.Drawers)
             </td>
-
-            @*<th>
-            @Html.DisplayFor(modelItem => item.Desk.SurfaceMaterialId)
-        </th>
-        <th>
-            @Html.DisplayFor(modelItem => item.RushId)
-        </th>*@
             <td>
                 @item.QuotePrice
             </td>
             
             <td>
-
                 <div class="dropdown open">
                     <button class="btn btn-secondary dropdown-toggle"
                             type="button" data-toggle="dropdown"
@@ -92,7 +77,6 @@
                         <a class="dropdown-item" asp-page="./Delete" asp-route-Id="@item.Id">Delete</a>
                     </div>
                 </div>
-
             </td>
         </tr>
         }
