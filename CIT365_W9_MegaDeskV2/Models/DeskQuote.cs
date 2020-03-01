@@ -14,6 +14,7 @@ namespace MegaDesk.Models
         [Key]
         public int Id { get; set; }
         [Display(Name = "Customer Name")]
+        [Required(ErrorMessage = "A customer name is required.")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "The customer name length must be between 3 and 50 characters")]
         public String CustomerName { get; set; }
         [Required(ErrorMessage = "A Desk must be configured")]
